@@ -1,0 +1,105 @@
+// Example theme
+//
+// Edit these styles to adjust the look and feel of your site
+
+
+$blue: #0096cc;
+$light-gray: #eee;
+$mid-gray: #999;
+$dark-gray: #555;
+
+$red: #f52;
+$green: #0f6;
+$orange: #fc2;
+
+
+.white { color: #fff; }
+.blue { color: $blue; }
+.light-gray { color: $light-gray; }
+.mid-gray { color: $mid-gray; }
+.dark-gray { color: $dark-gray; }
+
+
+.bg-white { background-color: #fff; }
+.bg-blue { background-color: $blue; }
+.bg-light-gray { background-color: $light-gray; }
+.bg-mid-gray { background-color: $mid-gray; }
+.bg-dark-gray { background-color: $dark-gray; }
+
+
+// Base theme styles
+
+body {
+  color: $dark-gray;
+  background-color: #fff;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  &:hover {
+    color: darken($blue, 10%);
+  }
+}
+
+.icon {
+  fill: $dark-gray;
+}
+
+// Buttons
+
+.button {
+  border-radius: .25rem;
+  transition-duration: .2s;
+  transition-timing-function: ease;
+  transition-property: box-shadow , background-color;
+}
+
+.button-box {
+  color: $dark-gray;
+  box-shadow: 0 0 0 2px $dark-gray;
+  &:hover,
+  &:focus {
+    color: $dark-gray;
+    outline: none;
+    box-shadow: 0 0 0 2px $dark-gray, 0 0 0 4px #fff, 0 0 0 6px $mid-gray;
+  }
+}
+
+
+// Borders
+
+.border {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.border-top {
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.border-light-gray {
+  border-color: $light-gray;
+}
+
+// Utilities
+.rounded { border-radius: .25rem; }
+.transition-all { transition: all .2s ease; }
+
+
+@-webkit-keyframes pop-in {
+  0%   { -webkit-transform: scale(.8); }
+  80%  { -webkit-transform: scale(1.1); }
+  100% { -webkit-transform: scale(1); }
+}
+@keyframes pop-in {
+  0%   { transform: scale(.8); }
+  80%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.anim-pop-in {
+  -webkit-animation: pop-in .1s linear;
+          animation: pop-in .1s linear;
+}
+

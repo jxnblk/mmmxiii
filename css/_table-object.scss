@@ -1,0 +1,14 @@
+// Table Object
+
+.table {
+  display: table;
+  width: 100%;
+}
+.table-fixed {
+  table-layout: fixed;
+}
+.table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
