@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>MMMXIII</title>
   <meta name="author" content="Jxnblk">
-  <meta name="description" content="Microbeats 2013">
+  <meta name="description" content="A mix of deconstructed Microbeats from the year 2013">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/favicon.png" />
   <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
@@ -37,9 +37,9 @@
           <div class="left">{{ currentTime | playTime }}</div>
           <div class="right">{{ duration | playTime }}</div>
         </div>
-        <div>
+        <div class="py1">
           <a ng-href="{{ track.permalink_url }}" class="mr1 mid-gray">Listen on SoundCloud</a>
-          <a href="https://twitter.com/intent/tweet?text=MMMXIII: a mix of deconstructed Microbeats&url=http://microbeats.cc/mmmxiii&via=jxnblk" target="_blank" class="mid-gray">Tweet</a>
+          <a href="https://twitter.com/intent/tweet?text=MMMXIII: a mix of deconstructed Microbeats from the year 2013&url=http://microbeats.cc/mmmxiii&via=jxnblk" target="_blank" class="mid-gray">Tweet</a>
         </div>
       </div>
     </div>
@@ -52,8 +52,9 @@
   <section class="px2 py4 center bg-light-gray">
     <h1 class="h2 garamond">Remix this</h1>
     <p class="p mb2">All samples and loops are available through a Creative Commons license for remixing</p>
-    <div>
-      <a href class="caps button button-box">Download Samples</a>
+    <div ng-controller="DropboxCtrl" class="mb1">
+      <a href class="caps button button-box mr2 mb2" ng-click="save()">Save to Dropbox</a>
+      <a href="http://jxn-assets.s3.amazonaws.com/mmmxiii.zip" class="caps button button-box">Download Samples</a>
     </div>
   </section>
 
@@ -65,6 +66,16 @@
       <a class="mid-gray" href="//soundcloud.com/jxnblk">SoundCloud</a>
     </p>
   </footer>
+
+  <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="57nbbzd80wzgul5"></script>
+
+  <script>
+    plangular.controller('DropboxCtrl', function($scope) {
+      $scope.save = function() {
+        Dropbox.save('http://jxn-assets.s3.amazonaws.com/mmmxiii.zip');
+      };
+    });
+  </script>
 
 </body>
 </html>
